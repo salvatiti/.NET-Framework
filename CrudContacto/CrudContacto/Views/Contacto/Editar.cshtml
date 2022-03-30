@@ -1,0 +1,42 @@
+﻿@model CrudContacto.Models.Contacto
+
+@{
+    ViewBag.Title = "Editar";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div class="row" style="margin-top:30px">
+    <div class="col-sm-12">
+        <div class="panel panel-warning">
+            <div class="panel-heading">
+                <h4>Editar Contacto</h4>
+            </div>
+            <div class="panel-body">
+                <form >
+                    <div class="form-group">
+                        <label>Nombre</label>
+                        <!--Se accede al texto de nombre que viene del modelo y muestra el valor que tiene-->
+                        <input type="text" class="form-control" name="Nombre" value="@Html.DisplayTextFor(m => m.Nombre)" />
+                    </div>
+                    <div class="form-group">
+                        <label>Apellido</label>
+                        <input type="text" class="form-control" name="Apellido" value="@Html.DisplayTextFor(m => m.Apellido)"/>
+                    </div>
+                    <div class="form-group">
+                        <label>Telefono</label>
+                        <input type="text" class="form-control" name="Telefono" value="@Html.DisplayTextFor(m => m.Telefono)" />
+                    </div>
+                    <div class="form-group">
+                        <label>Email</label>
+                        <input type="text" class="form-control" name="Email" value="@Html.DisplayTextFor(m => m.Email)" />
+                    </div>
+                    <button type="submit" class="btn btn-primary">Registrar</button>
+                    <a class=" btn btn-warning" href="@Url.Action("Inicio","Contacto")">Volver</a>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
