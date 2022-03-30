@@ -103,5 +103,32 @@ namespace CrudContacto.Controllers
             }
             return RedirectToAction("Inicio", "Contacto");
         }
+
+        public ActionResult Eliminar(int? idContacto) //el id puede ser nulo con ?
+        {
+            if (idContacto == null)
+                return RedirectToAction("Inicio", "Contacto"); //Si el id es nulo redirige a la pagina de Inicio
+
+            //si no es null me devuelve el contacto de mi listaContactos donde el idContacto de la lista es igual al idContacto que se le pase
+            Contacto contacto = listaContactos.Where(c => c.IdContacto == idContacto).First();
+
+            return View(contacto);
+        }
+
+        [HttpPost]
+        public ActionResult Eliminar(String IdContacto)
+        {
+            using (SqlConnection conexion = new SqlConnection(conexionDB))
+            {
+                //ejecuta un comando especificando nuestra cadena de conexion (SQLCONNECTION)
+                SqlCommand comando = new SqlCommand("Eliminar", conexion);
+                comando.Parameters.AddWithValue("idContacto", IdContacto);
+                comando.CommandType = CommandType.StoredProcedure; //Registrar es el procedimiento almacenado que hay en la DB
+                conexion.Open();
+                comando.ExecuteNonQuery(); //ejecutar el comando
+
+            }
+            return RedirectToAction("Inicio", "Contacto");
+        }
     }
 }
