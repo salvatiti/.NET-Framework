@@ -12,7 +12,8 @@
                 <h4>Editar Contacto</h4>
             </div>
             <div class="panel-body">
-                <form >
+                <form action="@Url.Action("Editar","Contacto")" method="post">
+                    <input type="hidden" class="form-control" name="IdContacto" value="@Html.DisplayTextFor(m => m.IdContacto)" />
                     <div class="form-group">
                         <label>Nombre</label>
                         <!--Se accede al texto de nombre que viene del modelo y muestra el valor que tiene-->
@@ -20,7 +21,7 @@
                     </div>
                     <div class="form-group">
                         <label>Apellido</label>
-                        <input type="text" class="form-control" name="Apellido" value="@Html.DisplayTextFor(m => m.Apellido)"/>
+                        <input type="text" class="form-control" name="Apellido" value="@Html.DisplayTextFor(m => m.Apellido)" />
                     </div>
                     <div class="form-group">
                         <label>Telefono</label>
@@ -30,7 +31,7 @@
                         <label>Email</label>
                         <input type="text" class="form-control" name="Email" value="@Html.DisplayTextFor(m => m.Email)" />
                     </div>
-                    <button type="submit" class="btn btn-primary">Registrar</button>
+                    <button type="submit" class="btn btn-primary">Guardar</button>
                     <a class=" btn btn-warning" href="@Url.Action("Inicio","Contacto")">Volver</a>
                 </form>
             </div>
