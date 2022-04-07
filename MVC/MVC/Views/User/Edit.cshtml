@@ -1,0 +1,43 @@
+﻿@model MVC.Models.ViewModels.EditUserViewModel
+@{
+    ViewBag.Title = "Editar Usuario";
+}
+
+<h2>@ViewBag.Title</h2>
+
+<div class=" row">
+    <div class="col-md-12">
+
+        @using (Html.BeginForm("Edit", "User", FormMethod.Post, new { role = "form", @class = "" })) //1º:Metodo,2º:Controller,3º:Protocolo(Post,Get),4:Etiqueta HTML
+        {
+            @Html.HiddenFor(d=>d.id)
+            @Html.AntiForgeryToken() //Genera un token interno para que no puedan hacerte peticiones desde fuera
+
+            @Html.ValidationMessage("ERROR", new { @class = "text-danger" })
+
+            @Html.LabelFor(d => d.email)
+            @Html.TextBoxFor(d => d.email, new { @class = "form-control" }) //1º: Campo de nuestro modelo, 2º: Etiqueta HTML
+            @Html.ValidationMessage("email", new { @class = "text-danger" }) <br />
+
+            @Html.LabelFor(d => d.password)
+            @Html.PasswordFor(d => d.password, new { @class = "form-control" })
+            @Html.ValidationMessage("password", new { @class = "text-danger" }) <br />
+
+            @Html.LabelFor(d => d.confirmPassword)
+            @Html.PasswordFor(d => d.confirmPassword, new { @class = "form-control" })
+            @Html.ValidationMessage("confirmPassword", new { @class = "text-danger" }) <br />
+
+            @Html.LabelFor(d => d.edad)
+            @Html.TextBoxFor(d => d.edad, new { @class = "form-control" })
+            @Html.ValidationMessage("edad", new { @class = "text-danger" })
+
+
+            <div style="text-align:right">
+                <input type="submit" class="btn btn-success" value="Guardar" />
+            </div>
+
+        }
+
+
+    </div>
+</div>
