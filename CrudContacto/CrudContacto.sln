@@ -5,6 +5,8 @@ VisualStudioVersion = 15.0.28307.1831
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CrudContacto", "CrudContacto\CrudContacto.csproj", "{489CBDD2-DD30-4DDC-B098-86A8FCD8B2B8}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CrudMVCPersona", "..\..\..\source\repos\CrudMVCPersona\CrudMVCPersona\CrudMVCPersona.csproj", "{2577D46F-78C0-42AC-BC14-7C630F4F177C}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -15,6 +17,10 @@ Global
 		{489CBDD2-DD30-4DDC-B098-86A8FCD8B2B8}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{489CBDD2-DD30-4DDC-B098-86A8FCD8B2B8}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{489CBDD2-DD30-4DDC-B098-86A8FCD8B2B8}.Release|Any CPU.Build.0 = Release|Any CPU
+		{2577D46F-78C0-42AC-BC14-7C630F4F177C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2577D46F-78C0-42AC-BC14-7C630F4F177C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2577D46F-78C0-42AC-BC14-7C630F4F177C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2577D46F-78C0-42AC-BC14-7C630F4F177C}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

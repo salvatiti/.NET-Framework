@@ -59,7 +59,7 @@ namespace CrudContacto.Controllers
             using (SqlConnection conexion = new SqlConnection(conexionDB))
             {
                 //ejecuta un comando especificando nuestra cadena de conexion (SQLCONNECTION)
-                SqlCommand comando = new SqlCommand("Registrar", conexion);
+                SqlCommand comando = new SqlCommand("Registrar", conexion); //Registrar es el proceso almacenado que se ha creado en la DB
                 comando.Parameters.AddWithValue("Nombre", contacto.Nombre);
                 comando.Parameters.AddWithValue("Apellido", contacto.Apellido);
                 comando.Parameters.AddWithValue("Telefono", contacto.Telefono);
@@ -90,7 +90,7 @@ namespace CrudContacto.Controllers
             using (SqlConnection conexion = new SqlConnection(conexionDB))
             {
                 //ejecuta un comando especificando nuestra cadena de conexion (SQLCONNECTION)
-                SqlCommand comando = new SqlCommand("Editar", conexion);
+                SqlCommand comando = new SqlCommand("Editar", conexion); //Editar es el proceso almacenado que se ha creado en la DB
                 comando.Parameters.AddWithValue("idContacto", contacto.IdContacto);
                 comando.Parameters.AddWithValue("Nombre", contacto.Nombre);
                 comando.Parameters.AddWithValue("Apellido", contacto.Apellido);
@@ -121,7 +121,7 @@ namespace CrudContacto.Controllers
             using (SqlConnection conexion = new SqlConnection(conexionDB))
             {
                 //ejecuta un comando especificando nuestra cadena de conexion (SQLCONNECTION)
-                SqlCommand comando = new SqlCommand("Eliminar", conexion);
+                SqlCommand comando = new SqlCommand("Eliminar", conexion); //Eliminar es el proceso almacenado que se ha creado en la DB
                 comando.Parameters.AddWithValue("idContacto", IdContacto);
                 comando.CommandType = CommandType.StoredProcedure; //Registrar es el procedimiento almacenado que hay en la DB
                 conexion.Open();
